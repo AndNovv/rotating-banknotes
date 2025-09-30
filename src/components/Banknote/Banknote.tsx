@@ -1,5 +1,9 @@
 import { useMemo } from 'react';
 import styles from './Banknote.module.css';
+import note100 from '../../assets/banknote_100.png';
+import note50 from '../../assets/banknote_50.png';
+import note20 from '../../assets/banknote_20.png';
+import silverTexture from '../../assets/silver_texture.png';
 
 interface BanknoteProps {
   x: number;
@@ -20,13 +24,11 @@ const Banknote: React.FC<BanknoteProps> = ({
   height,
   depth
 }) => {
-  const denominations = [100, 50, 20];
+  const notes = [note100, note50, note20];
 
-  const randomNominal = useMemo(() => {
-    return denominations[Math.floor(Math.random() * denominations.length)];
+  const randomNote = useMemo(() => {
+    return notes[Math.floor(Math.random() * notes.length)];
   }, []);
-
-  const banknoteClass = `banknote_${randomNominal}`;
 
   const style = {
     '--w': `${width}px`,
@@ -39,27 +41,30 @@ const Banknote: React.FC<BanknoteProps> = ({
   };
 
   return (
-    <div
-      className={`${styles.banknote} ${styles[banknoteClass]}`}
-      style={style}
-    >
+    <div className={`${styles.banknote}`} style={style}>
       <div
         className={`${styles.banknote__face} ${styles.banknote__face_front}`}
+        style={{ backgroundImage: `url(${randomNote})` }}
       ></div>
       <div
         className={`${styles.banknote__face} ${styles.banknote__face_back}`}
+        style={{ backgroundImage: `url(${randomNote})` }}
       ></div>
       <div
         className={`${styles.banknote__face} ${styles.banknote__face_right}`}
+        style={{ backgroundImage: `url(${silverTexture})` }}
       ></div>
       <div
         className={`${styles.banknote__face} ${styles.banknote__face_left}`}
+        style={{ backgroundImage: `url(${silverTexture})` }}
       ></div>
       <div
         className={`${styles.banknote__face} ${styles.banknote__face_top}`}
+        style={{ backgroundImage: `url(${silverTexture})` }}
       ></div>
       <div
         className={`${styles.banknote__face} ${styles.banknote__face_bottom}`}
+        style={{ backgroundImage: `url(${silverTexture})` }}
       ></div>
     </div>
   );

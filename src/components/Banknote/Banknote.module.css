@@ -34,8 +34,7 @@
   height: var(--h);
   left: calc(50% - var(--d) / 2);
   transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
-  background: linear-gradient(180deg, #10b981, #059669);
-  background-image: url('silver_texture.png');
+  box-shadow: 0 6px 12px rgba(2, 6, 23, 0.4);
 }
 
 .banknote__face_left {
@@ -43,8 +42,7 @@
   height: var(--h);
   left: calc(50% - var(--d) / 2);
   transform: rotateY(270deg) translateZ(calc(var(--w) / 2));
-  background: linear-gradient(180deg, #059669, #047857);
-  background-image: url('silver_texture.png');
+  box-shadow: 0 6px 12px rgba(2, 6, 23, 0.4);
 }
 
 .banknote__face_top {
@@ -52,8 +50,7 @@
   height: var(--d);
   top: calc(50% - var(--d) / 2);
   transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
-  background: linear-gradient(180deg, #86efac, #4ade80);
-  background-image: url('silver_texture.png');
+  box-shadow: 0 6px 12px rgba(2, 6, 23, 0.4);
 }
 
 .banknote__face_bottom {
@@ -61,30 +58,5 @@
   height: var(--d);
   top: calc(50% - var(--d) / 2);
   transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
-  background: linear-gradient(180deg, #16a34a, #0e6f33);
-  background-image: url('silver_texture.png');
-}
-
-/* Фон для номинала 100 */
-.banknote_100 .banknote__face_front {
-  background-image: url('banknote_100.png');
-}
-.banknote_100 .banknote__face_back {
-  background-image: url('banknote_100.png');
-}
-
-/* Фон для номинала 50 */
-.banknote_50 .banknote__face_front {
-  background-image: url('banknote_50.png');
-}
-.banknote_50 .banknote__face_back {
-  background-image: url('banknote_50.png');
-}
-
-/* Фон для номинала 20 */
-.banknote_20 .banknote__face_front {
-  background-image: url('banknote_20.png');
-}
-.banknote_20 .banknote__face_back {
-  background-image: url('banknote_20.png');
+  box-shadow: 0 6px 12px rgba(2, 6, 23, 0.4);
 }
